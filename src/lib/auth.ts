@@ -4,8 +4,7 @@ import { prismaAdapter } from "better-auth/adapters/prisma";
 import { nextCookies } from "better-auth/next-js";
 
 
-console.log("BETTER_AUTH_URL =", process.env.BETTER_AUTH_URL);
-console.log("NEXT_PUBLIC_APP_URL =", process.env.NEXT_PUBLIC_APP_URL);
+
 //AUTENTICAÇÃO
 export const auth = betterAuth({
   secret: process.env.BETTER_AUTH_SECRET,
