@@ -1,0 +1,1 @@
+export const inputClasses = "w-full rounded-3xl p-4 mt-1 mb-4 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-[#9333EA] placeholder:text-zinc-600";

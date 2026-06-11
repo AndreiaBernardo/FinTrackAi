@@ -1,0 +1,19 @@
+import { betterAuth } from "better-auth";
+import { prisma } from "./prisma";
+import { prismaAdapter } from "better-auth/adapters/prisma";
+import { nextCookies } from "better-auth/next-js";
+
+//AUTENTICAÇÃO
+export const auth = betterAuth({
+  secret: process.env.BETTER_AUTH_SECRET,
+  baseURL:process.env.NEXT_PUBLIC_APP_URL,
+  database: prismaAdapter(prisma, {
+    provider: "postgresql",
+  }),
+
+  emailAndPassword: {
+    enabled: true,
+  },
+  plugins: [nextCookies()],
+  trustedOrigins: [process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"],
+});
